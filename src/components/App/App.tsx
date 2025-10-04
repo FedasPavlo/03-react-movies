@@ -7,6 +7,7 @@ import MovieModal from '../MovieModal/MovieModal';
 import { fetchMovies } from '../../services/movieService';
 import type { Movie } from '../../types/movie';
 import toast from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import css from './App.module.css';
 
 export default function App() {
@@ -47,6 +48,8 @@ export default function App() {
 
   return (
     <div className={css.app}>
+        <Toaster position="top-right" />
+        
       <SearchBar onSubmit={handleSearch} />
       {loading && <Loader />}
       {error && <ErrorMessage />}
